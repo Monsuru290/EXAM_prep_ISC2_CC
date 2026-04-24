@@ -1,6 +1,6 @@
 {
   "title": "ISC2 CC Practice Questions",
-  "totalQuestions": 130,
+  "totalQuestions": 180,
   "questions": [
     {
       "id": 1,
@@ -1530,6 +1530,606 @@
         ],
         "answer": 1,
         "explanation": "Policies provide guidelines for behavior and controls."
-      }
+      },
+  {
+    "id": 131,
+    "question": "A multinational company migrates critical identity stores to a new cloud provider and notices inconsistent audit logs across regions during a compliance review; which control should be prioritized to ensure consistent forensic capability across all regions?",
+    "options": [
+      "Implement centralized log aggregation with immutable storage",
+      "Increase password complexity for all accounts",
+      "Disable remote access to identity stores",
+      "Deploy additional antivirus on endpoints"
+    ],
+    "answer": 0,
+    "explanation": "Centralized, immutable logging ensures consistent forensic data across regions for investigation and compliance."
+  },
+  {
+    "id": 132,
+    "question": "During a red team exercise an attacker gained access to a development environment by exploiting weak CI/CD secrets; what is the MOST effective long-term mitigation to prevent secret exposure in pipelines?",
+    "options": [
+      "Rotate secrets monthly",
+      "Use a secrets manager with short-lived credentials and pipeline integration",
+      "Store secrets in encrypted files in the repo",
+      "Limit developer access to the CI server"
+    ],
+    "answer": 1,
+    "explanation": "Secrets managers issuing short-lived credentials reduce exposure risk and integrate securely with CI/CD."
+  },
+  {
+    "id": 133,
+    "question": "A critical web application shows intermittent high CPU usage and outbound connections to unknown IPs after a third-party library update; what immediate action best preserves evidence while limiting further compromise?",
+    "options": [
+      "Reboot the server to clear memory",
+      "Isolate the host from the network and capture volatile memory and network logs",
+      "Uninstall the third-party library",
+      "Disable user accounts on the application"
+    ],
+    "answer": 1,
+    "explanation": "Isolating the host and capturing volatile data preserves evidence and prevents further exfiltration."
+  },
+  {
+    "id": 134,
+    "question": "A finance team reports that an automated payroll process sent salary files to an external vendor due to a misconfigured SFTP endpoint; which control would MOST effectively prevent accidental external disclosure of sensitive files?",
+    "options": [
+      "Require manual approval for all file transfers",
+      "Implement data loss prevention policies that block transfers of classified payroll files to external endpoints",
+      "Encrypt files with a shared team key",
+      "Limit SFTP access to business hours"
+    ],
+    "answer": 1,
+    "explanation": "DLP policies can detect and block classified payroll files from being transferred to unauthorized external endpoints."
+  },
+  {
+    "id": 135,
+    "question": "An organization uses BYOD and notices a pattern of compromised personal devices connecting to corporate Wi‑Fi; which architectural change most reduces risk while preserving user flexibility?",
+    "options": [
+      "Require all devices to use company VPN",
+      "Implement network access control with device posture checks and segmented guest and corporate networks",
+      "Ban BYOD entirely",
+      "Limit Wi‑Fi bandwidth for personal devices"
+    ],
+    "answer": 1,
+    "explanation": "NAC with posture checks and segmentation ensures only compliant devices access sensitive resources while allowing BYOD."
+  },
+  {
+    "id": 136,
+    "question": "A cloud database containing PII is accidentally made publicly accessible due to an IAM policy error; which combination of controls would most rapidly reduce exposure and prevent recurrence?",
+    "options": [
+      "Rotate database credentials and notify affected users",
+      "Apply least-privilege IAM policies, enable automated configuration scanning, and rotate credentials",
+      "Delete the database and restore from backup",
+      "Disable all cloud services temporarily"
+    ],
+    "answer": 1,
+    "explanation": "Least-privilege IAM, automated scanning for misconfigurations, and credential rotation address exposure and recurrence."
+  },
+  {
+    "id": 137,
+    "question": "A senior executive insists on using personal email for sensitive vendor negotiations; what policy and technical approach best balances executive convenience with organizational security?",
+    "options": [
+      "Prohibit executives from external email use",
+      "Provide a managed, secure executive mailbox with enforced DLP and secure mobile access while training on risks",
+      "Monitor the executive’s personal email without consent",
+      "Require executives to use only encrypted attachments"
+    ],
+    "answer": 1,
+    "explanation": "Providing managed secure mailboxes with DLP and training balances usability and security for executives."
+  },
+  {
+    "id": 138,
+    "question": "A manufacturing plant uses legacy ICS devices that cannot be patched frequently; which layered strategy most effectively reduces the risk of remote compromise of those devices?",
+    "options": [
+      "Disconnect ICS devices from all networks",
+      "Implement network segmentation, application whitelisting at gateways, and strict access controls with jump hosts",
+      "Replace all legacy devices immediately",
+      "Rely solely on host-based antivirus"
+    ],
+    "answer": 1,
+    "explanation": "Segmentation, gateway controls, and controlled access reduce exposure while maintaining operations for legacy ICS."
+  },
+  {
+    "id": 139,
+    "question": "A data science team requests broad access to production datasets for model training, but the security team is concerned about privacy; which approach best enables analytics while protecting sensitive data?",
+    "options": [
+      "Provide full production access with NDA",
+      "Create anonymized or synthetic datasets and provide controlled, audited access to sanitized data",
+      "Deny all access to production data",
+      "Allow access only during off-hours"
+    ],
+    "answer": 1,
+    "explanation": "Anonymized or synthetic datasets with audited access enable analytics while protecting privacy."
+  },
+  {
+    "id": 140,
+    "question": "A penetration test reveals that internal DNS records expose service names and internal architecture to attackers; what remediation reduces information leakage without disrupting operations?",
+    "options": [
+      "Remove DNS entirely",
+      "Implement split-horizon DNS and minimize internal record exposure while documenting exceptions",
+      "Publish all internal DNS publicly for transparency",
+      "Rename all services daily"
+    ],
+    "answer": 1,
+    "explanation": "Split-horizon DNS limits external visibility of internal records while preserving internal resolution."
+  },
+  {
+    "id": 141,
+    "question": "A SaaS vendor notifies you of a vulnerability in their single‑sign‑on integration that could allow token replay; what immediate and follow-up actions best protect your users?",
+    "options": [
+      "Disable SSO permanently",
+      "Revoke existing tokens, enforce short token lifetimes, enable MFA, and coordinate vendor patching and testing",
+      "Ask users to change passwords",
+      "Switch to a different vendor without testing"
+    ],
+    "answer": 1,
+    "explanation": "Revoking tokens, shortening lifetimes, enforcing MFA, and coordinating vendor fixes mitigate replay risks quickly and sustainably."
+  },
+  {
+    "id": 142,
+    "question": "A developer accidentally committed database credentials to a public repository and they were cloned before removal; which sequence of actions best contains the breach and reduces future risk?",
+    "options": [
+      "Delete the repository and hope for the best",
+      "Rotate the exposed credentials immediately, perform a secrets scan across repos, and implement pre-commit secret detection",
+      "Notify users and wait for vendor guidance",
+      "Change the repository visibility to private"
+    ],
+    "answer": 1,
+    "explanation": "Immediate credential rotation, scanning for other secrets, and pre-commit detection contain exposure and prevent recurrence."
+  },
+  {
+    "id": 143,
+    "question": "A remote office uses a single shared administrative account for network devices; an audit shows the account was used from an unknown IP; what control change most reduces risk while maintaining manageability?",
+    "options": [
+      "Continue using the shared account but change the password weekly",
+      "Implement unique administrative accounts with MFA, session logging, and role-based access for network devices",
+      "Disable remote management entirely",
+      "Use a single VPN account for all admins"
+    ],
+    "answer": 1,
+    "explanation": "Unique admin accounts with MFA and logging improve accountability and reduce risk compared to shared credentials."
+  },
+  {
+    "id": 144,
+    "question": "A web application accepts file uploads and an attacker successfully uploaded a web shell; which layered remediation strategy most effectively prevents similar attacks in the future?",
+    "options": [
+      "Block all file uploads",
+      "Implement strict file type validation, store uploads outside web root, scan for malware, and apply least privilege to processing services",
+      "Allow uploads but monitor manually",
+      "Require users to zip files before upload"
+    ],
+    "answer": 1,
+    "explanation": "Validation, safe storage, malware scanning, and least privilege reduce the risk of executable uploads and web shells."
+  },
+  {
+    "id": 145,
+    "question": "A business partner requests direct API access to your customer database for integration; security is concerned about scope and control; which approach best balances integration needs and data protection?",
+    "options": [
+      "Provide full database credentials to the partner",
+      "Expose a limited, audited API with token-based access, rate limiting, and field-level filtering",
+      "Share a nightly CSV export via email",
+      "Allow partner VPN access to the internal network"
+    ],
+    "answer": 1,
+    "explanation": "A limited, audited API with tokens and filtering provides controlled access while protecting data."
+  },
+  {
+    "id": 146,
+    "question": "An organization experiences repeated credential stuffing attempts against its customer portal; which combination of controls will most effectively reduce successful account takeover risk?",
+    "options": [
+      "Require longer passwords only",
+      "Implement rate limiting, credential stuffing detection, MFA, and breached credential checks",
+      "Disable customer logins during attacks",
+      "Force password resets for all users monthly"
+    ],
+    "answer": 1,
+    "explanation": "Rate limiting, detection, MFA, and breached credential checks together mitigate credential stuffing and account takeover."
+  },
+  {
+    "id": 147,
+    "question": "A contractor needs temporary privileged access to perform maintenance on production systems; which access model best provides necessary privileges while minimizing long-term risk?",
+    "options": [
+      "Create a permanent privileged account for the contractor",
+      "Use just-in-time privileged access with time-bound elevation, approval workflow, and session recording",
+      "Share an existing admin account",
+      "Provide VPN access without elevation"
+    ],
+    "answer": 1,
+    "explanation": "JIT privileged access with approvals and session recording grants temporary rights while maintaining oversight and auditability."
+  },
+  {
+    "id": 148,
+    "question": "A critical application depends on a third-party DNS provider and experiences outages when the provider is attacked; what resilience strategy most effectively reduces single‑provider DNS risk?",
+    "options": [
+      "Host DNS internally only",
+      "Use multi-provider DNS with health checks and failover, and monitor DNS integrity",
+      "Switch providers frequently",
+      "Use a single global CDN for DNS"
+    ],
+    "answer": 1,
+    "explanation": "Multi-provider DNS with failover and monitoring reduces dependency on a single provider and improves resilience."
+  },
+  {
+    "id": 149,
+    "question": "A security review finds that service accounts used by automation scripts have broad privileges and long-lived keys; which remediation reduces attack surface while preserving automation functionality?",
+    "options": [
+      "Delete all service accounts",
+      "Adopt least-privilege service accounts, rotate keys frequently, and use short-lived tokens from a secrets manager",
+      "Store keys in plain text on the automation server",
+      "Limit automation to business hours"
+    ],
+    "answer": 1,
+    "explanation": "Least-privilege accounts with frequent rotation and short-lived tokens reduce exposure while enabling automation."
+  },
+  {
+    "id": 150,
+    "question": "A hospital’s EHR system requires high availability but also strict confidentiality; which architectural approach best balances availability and confidentiality for patient records?",
+    "options": [
+      "Replicate data to public cloud without encryption",
+      "Use encrypted replication across isolated, redundant environments with strict access controls and audited failover",
+      "Keep a single on-premises instance",
+      "Allow read-only public access for availability"
+    ],
+    "answer": 1,
+    "explanation": "Encrypted replication across redundant, isolated environments with access controls preserves both availability and confidentiality."
+  },
+  {
+    "id": 151,
+    "question": "A security team discovers lateral movement using SMB from a compromised workstation to file servers; which immediate containment and long-term control combination best limits further spread?",
+    "options": [
+      "Shut down all file servers",
+      "Isolate the compromised host, block SMB at network boundaries, implement endpoint detection and response, and enforce network segmentation",
+      "Disable user file sharing permanently",
+      "Require users to change passwords"
+    ],
+    "answer": 1,
+    "explanation": "Isolation, blocking SMB, EDR, and segmentation contain the incident and reduce future lateral movement risk."
+  },
+  {
+    "id": 152,
+    "question": "A marketing team uses third-party analytics scripts on the corporate website and a vulnerability in one script led to client-side token theft; what mitigation reduces this supply-chain risk while preserving analytics functionality?",
+    "options": [
+      "Remove all third-party scripts",
+      "Use a content security policy, subresource integrity, and proxy third-party scripts through a vetted gateway",
+      "Allow scripts only from any HTTPS source",
+      "Host third-party scripts on the vendor’s servers"
+    ],
+    "answer": 1,
+    "explanation": "CSP, SRI, and proxying scripts through a vetted gateway reduce supply-chain risk while allowing analytics."
+  },
+  {
+    "id": 153,
+    "question": "A cloud-native application uses container images from public registries and a vulnerability scan found outdated base images; which process change most effectively reduces future image vulnerabilities?",
+    "options": [
+      "Stop using containers",
+      "Implement an internal image registry with automated vulnerability scanning, image signing, and enforced base image updates",
+      "Allow developers to pull images directly from public registries",
+      "Use only official images without scanning"
+    ],
+    "answer": 1,
+    "explanation": "An internal registry with scanning and signing enforces secure image usage and timely updates."
+  },
+  {
+    "id": 154,
+    "question": "A legal request demands customer data for a subset of users; the data team proposes exporting the entire dataset to expedite delivery; what is the MOST compliant and secure approach?",
+    "options": [
+      "Export the entire dataset and redact later",
+      "Perform a targeted export limited to the requested subset with access controls, logging, and legal review",
+      "Refuse the request",
+      "Provide screenshots of the data"
+    ],
+    "answer": 1,
+    "explanation": "Targeted exports with controls and legal oversight minimize unnecessary data exposure and support compliance."
+  },
+  {
+    "id": 155,
+    "question": "A mobile app stores authentication tokens on the device and a researcher demonstrates token theft via a rooted device; which design change most reduces token theft risk on compromised devices?",
+    "options": [
+      "Store tokens in plain text for performance",
+      "Use short-lived tokens with refresh via secure backend and bind tokens to device attestation where possible",
+      "Disable mobile app functionality",
+      "Require users to change tokens weekly"
+    ],
+    "answer": 1,
+    "explanation": "Short-lived tokens, secure refresh, and device attestation reduce the impact of token theft on compromised devices."
+  },
+  {
+    "id": 156,
+    "question": "A company’s incident response plan lacks clear roles for legal and communications during a breach; during a recent incident this caused delays; what change most improves response effectiveness?",
+    "options": [
+      "Outsource all incident response",
+      "Define RACI roles for legal, communications, and executive stakeholders and include them in tabletop exercises",
+      "Only involve legal after containment",
+      "Limit communications to internal staff"
+    ],
+    "answer": 1,
+    "explanation": "Clear RACI assignments and regular exercises ensure legal and communications are integrated into timely incident response."
+  },
+  {
+    "id": 157,
+    "question": "A company uses machine learning models trained on customer data and a model inversion attack could reveal training data; which control best protects training data privacy while enabling model development?",
+    "options": [
+      "Stop using machine learning",
+      "Apply differential privacy techniques, limit model access, and use synthetic data for testing",
+      "Publish model weights publicly",
+      "Train models only on production systems"
+    ],
+    "answer": 1,
+    "explanation": "Differential privacy and synthetic data reduce the risk of revealing training data while supporting model development."
+  },
+  {
+    "id": 158,
+    "question": "A cloud provider offers a managed key management service but the security team is concerned about vendor lock-in; which hybrid approach balances control and operational efficiency for encryption keys?",
+    "options": [
+      "Never use cloud KMS",
+      "Use a combination of customer-managed keys in the provider KMS with periodic key exportability and on-premises key escrow for critical keys",
+      "Store keys in application code",
+      "Use provider-managed keys without oversight"
+    ],
+    "answer": 1,
+    "explanation": "Customer-managed keys with exportability and on-premises escrow balance control and cloud efficiency while mitigating lock-in."
+  },
+  {
+    "id": 159,
+    "question": "A newly deployed IoT fleet reports telemetry to a central service and attackers spoof device identities to inject false data; which design change most effectively ensures device authenticity and data integrity?",
+    "options": [
+      "Accept telemetry without verification",
+      "Implement mutual TLS with device certificates, device identity lifecycle management, and signed telemetry",
+      "Use a shared static token for all devices",
+      "Throttle telemetry ingestion"
+    ],
+    "answer": 1,
+    "explanation": "Mutual TLS, certificate lifecycle management, and signed telemetry authenticate devices and protect data integrity."
+  },
+  {
+    "id": 160,
+    "question": "A business unit requests rapid deployment of a new feature directly to production bypassing staging; security is concerned about unknown risks; which deployment practice best balances speed and safety?",
+    "options": [
+      "Allow direct production deploys for speed",
+      "Adopt feature flags, canary releases, automated security tests, and staged rollouts with monitoring",
+      "Deploy only during weekends",
+      "Require manual code review for every change"
+    ],
+    "answer": 1,
+    "explanation": "Feature flags, canaries, automated security tests, and staged rollouts enable rapid delivery with controlled risk."
+  },
+  {
+    "id": 161,
+    "question": "A critical vendor notifies you of a breach that may have exposed integration credentials used by your systems; what immediate and strategic actions best reduce exposure and future supply-chain risk?",
+    "options": [
+      "Ignore the vendor notification",
+      "Immediately rotate integration credentials, audit all vendor access, implement least-privilege API tokens, and require vendor security attestations",
+      "Terminate the vendor contract immediately",
+      "Continue operations as normal"
+    ],
+    "answer": 1,
+    "explanation": "Credential rotation, auditing, least-privilege tokens, and vendor security attestations mitigate exposure and strengthen supply-chain security."
+  },
+  {
+    "id": 162,
+    "question": "A database administrator uses a single master encryption key for multiple environments and a key compromise would be catastrophic; which key management practice most reduces blast radius?",
+    "options": [
+      "Use the same key for all environments for simplicity",
+      "Implement environment-specific keys, key rotation, and role-based access to key management operations",
+      "Store keys in a shared spreadsheet",
+      "Disable encryption to avoid key management"
+    ],
+    "answer": 1,
+    "explanation": "Environment-specific keys with rotation and RBAC limit the impact of a key compromise and improve security posture."
+  },
+  {
+    "id": 163,
+    "question": "A web application uses user-supplied input to build SQL queries and a security scan found potential injection points; which remediation approach most reliably prevents SQL injection across the codebase?",
+    "options": [
+      "Escape input manually in each query",
+      "Use parameterized queries or prepared statements and input validation frameworks consistently",
+      "Block all user input longer than 50 characters",
+      "Rely on WAF rules only"
+    ],
+    "answer": 1,
+    "explanation": "Parameterized queries and consistent input validation prevent SQL injection more reliably than ad hoc escaping or WAF alone."
+  },
+  {
+    "id": 164,
+    "question": "A cloud cost optimization effort disabled logging to reduce storage fees, but security warns this may hinder incident response; what policy balances cost control and forensic readiness?",
+    "options": [
+      "Disable logging permanently",
+      "Retain critical logs in tiered storage with lifecycle policies, compress older logs, and prioritize retention for security-relevant sources",
+      "Store logs only locally on each host",
+      "Log only during business hours"
+    ],
+    "answer": 1,
+    "explanation": "Tiered log retention with lifecycle policies balances cost and forensic readiness by preserving critical logs affordably."
+  },
+  {
+    "id": 165,
+    "question": "A developer requests broad database write permissions to implement a new feature quickly; security requires controls to prevent accidental or malicious data corruption; which approach best satisfies both teams?",
+    "options": [
+      "Grant permanent write permissions",
+      "Provide scoped, time-limited write access with code review, database change approvals, and sandbox testing",
+      "Deny all developer database access",
+      "Allow write access only from the developer’s laptop"
+    ],
+    "answer": 1,
+    "explanation": "Scoped, time-limited access with approvals and sandbox testing enables development while protecting production data integrity."
+  },
+  {
+    "id": 166,
+    "question": "A company’s backup process stores unencrypted backups in cloud object storage with public read ACLs by mistake; which immediate and policy changes most effectively remediate and prevent recurrence?",
+    "options": [
+      "Delete backups and stop backing up",
+      "Revoke public ACLs, encrypt backups at rest, implement automated ACL scanning, and enforce backup encryption policies",
+      "Move backups to a different bucket without changing ACLs",
+      "Notify customers and wait"
+    ],
+    "answer": 1,
+    "explanation": "Removing public access, encrypting backups, automated ACL scanning, and policy enforcement remediate exposure and prevent recurrence."
+  },
+  {
+    "id": 167,
+    "question": "A security analyst finds evidence of credential harvesting via a compromised internal wiki page; what combination of actions best contains the incident and reduces future risk?",
+    "options": [
+      "Delete the wiki and rebuild later",
+      "Remove malicious content, rotate affected credentials, enable content integrity checks, and review wiki access permissions and audit logs",
+      "Disable the wiki for all users permanently",
+      "Require users to change passwords weekly"
+    ],
+    "answer": 1,
+    "explanation": "Removing malicious content, rotating credentials, integrity checks, and permission reviews contain the incident and reduce recurrence."
+  },
+  {
+    "id": 168,
+    "question": "A financial services firm must meet strict regulatory retention requirements for transaction logs but also minimize exposure; which storage and access model best satisfies compliance and security?",
+    "options": [
+      "Store logs on developer laptops",
+      "Use immutable, access-controlled archival storage with encryption and audited retrieval workflows",
+      "Keep logs in production databases indefinitely",
+      "Publish logs to a public repository for transparency"
+    ],
+    "answer": 1,
+    "explanation": "Immutable, access-controlled, encrypted archival storage with audited retrieval meets retention and security requirements."
+  },
+  {
+    "id": 169,
+    "question": "A security review shows that several microservices accept JWTs without validating the token issuer and audience; what is the MOST critical change to prevent token misuse?",
+    "options": [
+      "Ignore token validation",
+      "Enforce strict JWT validation including issuer, audience, signature verification, and token expiry checks",
+      "Accept tokens only from internal networks",
+      "Use longer token lifetimes"
+    ],
+    "answer": 1,
+    "explanation": "Strict JWT validation of issuer, audience, signature, and expiry prevents token misuse and forgery."
+  },
+  {
+    "id": 170,
+    "question": "A company plans to decommission an old CRM but must preserve historical records for legal discovery; which decommissioning approach best balances data preservation and security?",
+    "options": [
+      "Delete all CRM data immediately",
+      "Export and encrypt required records to secure archival storage with documented chain of custody and access controls",
+      "Leave the CRM running indefinitely",
+      "Provide raw database dumps to legal counsel without controls"
+    ],
+    "answer": 1,
+    "explanation": "Exporting and encrypting required records with chain of custody and access controls preserves evidence securely for discovery."
+  },
+  {
+    "id": 171,
+    "question": "A cloud function processes uploaded documents and an attacker submits a specially crafted file that triggers remote code execution; which secure coding and deployment practices most effectively mitigate this class of vulnerability?",
+    "options": [
+      "Allow all file types and rely on runtime isolation",
+      "Validate and sanitize inputs, run processing in least-privileged containers with resource limits, and perform static and dynamic analysis",
+      "Disable file uploads entirely",
+      "Increase function memory limits"
+    ],
+    "answer": 1,
+    "explanation": "Input validation, least-privileged execution, resource limits, and analysis reduce RCE risk from crafted files."
+  },
+  {
+    "id": 172,
+    "question": "A company uses a centralized identity provider and experiences an outage that prevents user authentication; which design pattern best maintains availability while preserving security during IdP failures?",
+    "options": [
+      "Allow anonymous access during outages",
+      "Implement fallback authentication mechanisms with cached tokens, emergency access procedures, and strict auditing",
+      "Disable all services until IdP is restored",
+      "Use a single static admin password for emergencies"
+    ],
+    "answer": 1,
+    "explanation": "Cached tokens, emergency access with auditing, and fallback procedures maintain availability securely during IdP outages."
+  },
+  {
+    "id": 173,
+    "question": "A security team finds that several legacy applications rely on deprecated cryptographic algorithms; what migration strategy minimizes operational disruption while improving cryptographic strength?",
+    "options": [
+      "Stop using cryptography",
+      "Introduce algorithm agility with dual-writing (support old and new algorithms), phased migration, and compatibility testing",
+      "Replace all applications at once",
+      "Ignore the issue"
+    ],
+    "answer": 1,
+    "explanation": "Algorithm agility and phased migration allow gradual transition to stronger cryptography with minimal disruption."
+  },
+  {
+    "id": 174,
+    "question": "A distributed denial-of-service attack targets your public API and causes service degradation; which layered defenses best mitigate the attack while preserving legitimate traffic?",
+    "options": [
+      "Shut down the API",
+      "Use rate limiting, geo-fencing, CDN and WAF protections, and scalable autoscaling with traffic scrubbing",
+      "Block all IP addresses",
+      "Require users to register before accessing the API"
+    ],
+    "answer": 1,
+    "explanation": "Rate limiting, CDN/WAF, autoscaling, and traffic scrubbing help mitigate DDoS while allowing legitimate traffic."
+  },
+  {
+    "id": 175,
+    "question": "A data engineer wants to speed up analytics by granting broad read access to multiple data stores; security insists on controls; which approach best enables analytics while enforcing data governance?",
+    "options": [
+      "Grant broad read access to all engineers",
+      "Provide role-based, time-limited access to curated data marts with column-level masking and audit logging",
+      "Deny all analytics access",
+      "Share credentials for a single analytics account"
+    ],
+    "answer": 1,
+    "explanation": "Curated data marts with RBAC, masking, and auditing enable analytics while enforcing governance and minimizing exposure."
+  },
+  {
+    "id": 176,
+    "question": "A newly onboarded vendor requests a network connection for integration testing and security is concerned about lateral movement; which network access approach best isolates vendor activity?",
+    "options": [
+      "Provide vendor full network access",
+      "Create a dedicated vendor VLAN with strict ACLs, monitored gateways, and time-bound access",
+      "Allow vendor access only during off-hours",
+      "Share an internal test account"
+    ],
+    "answer": 1,
+    "explanation": "Dedicated VLANs with ACLs and monitoring isolate vendor activity and reduce lateral movement risk."
+  },
+  {
+    "id": 177,
+    "question": "A web application uses client-side JavaScript to enforce authorization checks and an attacker bypasses them to access restricted functions; what is the MOST secure corrective action?",
+    "options": [
+      "Rely on client-side checks only",
+      "Enforce server-side authorization checks for all sensitive actions and treat client-side checks as UX only",
+      "Obfuscate client-side code",
+      "Disable JavaScript"
+    ],
+    "answer": 1,
+    "explanation": "Server-side authorization is authoritative; client-side checks are insufficient for security and should be treated as UX enhancements."
+  },
+  {
+    "id": 178,
+    "question": "A company’s mobile device management policy allows personal devices with minimal controls and an audit reveals sensitive email access from unmanaged phones; which policy and technical changes most effectively secure mobile access?",
+    "options": [
+      "Ban all personal devices",
+      "Enforce MDM enrollment, conditional access policies, containerization for corporate data, and selective wipe capability",
+      "Allow access only from desktop",
+      "Require users to install antivirus only"
+    ],
+    "answer": 1,
+    "explanation": "MDM enrollment, conditional access, containerization, and selective wipe secure corporate data on personal devices while allowing BYOD."
+  },
+  {
+    "id": 179,
+    "question": "A cloud-native microservice architecture relies on service-to-service communication using mutual TLS, but certificate rotation is manual and error-prone; which automation practice most reduces operational risk?",
+    "options": [
+      "Never rotate certificates",
+      "Automate certificate issuance and rotation with a PKI or certificate manager integrated into the deployment pipeline",
+      "Use self-signed certificates without rotation",
+      "Rotate certificates annually"
+    ],
+    "answer": 1,
+    "explanation": "Automated certificate issuance and rotation via PKI reduces errors and operational risk while maintaining secure mTLS."
+  },
+  {
+    "id": 180,
+    "question": "A security audit finds that privileged session recordings are stored unencrypted and accessible to many administrators; which remediation best protects session recordings while preserving auditability?",
+    "options": [
+      "Delete all session recordings",
+      "Encrypt session recordings at rest, restrict access via RBAC, and log all retrievals with multi-party approval for sensitive playback",
+      "Store recordings on a shared drive",
+      "Disable session recording"
+    ],
+    "answer": 1,
+    "explanation": "Encrypting recordings, restricting access, and auditing retrievals protect sensitive session data while maintaining accountability."
+  }
   ]
 }
